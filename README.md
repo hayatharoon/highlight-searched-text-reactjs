@@ -10,7 +10,7 @@ The function grab the value of the input field and also have the DOM refernce of
 
 One thing to Note, If we put `replace` method then it will replace on the first occurence of the text. But if we put `replaceAll` method it will replace all the occurance of the input field in the paragraph.
 
-**Visit to the site:** [Click here](https://advice-reactjs-app.netlify.app/)
+**Visit to the site:** [Click here](https://text-highlight-react.netlify.app/)
 
 ## **App View:**
 
