@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React, { useState, useRef } from 'react';
 import './App.css';
 
 function App() {
+  const initialText =
+    'React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta and a community of individual developers and companies. React can be used as a base in the development of single-page, mobile, or server-rendered applications with frameworks like Next.js. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality';
+  const [text, setText] = useState(initialText);
+  const [inputValue, setInputValue] = useState('');
+
+  function handleChange(event) {
+    let value = event.target.value;
+    let txt = document.getElementById('myText');
+    txt.innerHTML = txt.innerText.replaceAll(value, `<span style="background: yellow">${value}</span>`);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='card'>
+        <input type='text' placeholder='Enter text to search' onChange={handleChange} />
+        <p id='myText'>{text}</p>
+      </div>
     </div>
   );
 }
